@@ -53,3 +53,36 @@ p
 {
   font-size: 20px;
 }
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+.custom-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.form-control
+{
+  width: 300px !important;
+}
+
+.sign-up-div, .sign-up-part
+{
+  margin-top: 50px;
+  display: grid;
+  place-items: center;
+}
+
+.no-account-button
+{
+  width: 40% !important;
+}
+
+.sign-in-inputs
+{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
