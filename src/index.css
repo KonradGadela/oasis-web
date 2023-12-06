@@ -72,6 +72,7 @@ a {
 .sign-up-div, .sign-up-part
 {
   margin-top: 50px;
+  margin-bottom: 50px;
   display: grid;
   place-items: center;
 }
@@ -79,10 +80,24 @@ a {
 .no-account-button
 {
   width: 40% !important;
+  color: green !important;
+  background-color: white !important;
+  transition: transform 0.5s ease-in-out !important;
+
 }
 
+.no-account-button:hover
+{
+  transform: scale(1.1) !important;
+}
 .sign-in-inputs
 {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
+
+.log-in-button
+{
+  width: 20%;
+}
+
