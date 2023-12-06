@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 
 
 //Created homepage
+//Main content
 const Home = () => {
     return (
         <div>
