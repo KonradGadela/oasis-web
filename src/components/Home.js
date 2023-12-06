@@ -2,6 +2,9 @@ import React from 'react';
 import mainpic from '.././images/oasis-image-main.png';
 import NavBar from './NavBar';
 
+
+//Created homepage
+//Main content
 const Home = () => {
   return (
     <div>
