@@ -3,6 +3,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import RoomGrid from './RoomGrid';
 import NavBar from '../NavBar';
 import axios from 'axios';
+import FilterBar from './FilterBar';
 const Rooms = () => {
     const [roomData, setRoomData] = useState([]);
 
@@ -37,6 +38,7 @@ const Rooms = () => {
     return (
         <div style={{ backgroundColor: '#f5f5f5', minHeight: '100vh' }}>
             <NavBar />
+            <FilterBar />
             <ThemeProvider theme={theme}>
                 <div style={{ backgroundColor: '#f5f5f5', marginRight: '30px' }}>
                     <RoomGrid rooms={roomData} />
