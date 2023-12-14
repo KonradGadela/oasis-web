@@ -101,6 +101,55 @@ a {
   width: 20%;
 }
 
+.alert-success
+{
+  width: 70% !important;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.service
+{
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.allServices
+{
+  width: 100% !important; 
+  display: flex;
+  justify-content: space-between; 
+}
+
+.service-pic
+{
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Set a fixed height for the images */
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.service-pic:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.allServicesHeader
+{
+  margin-top: 30px;
+  margin-left: 40px;
+}
+
+.serviceHeader
+{
+  margin-top: 20px;
+}
+
 .grey-label {
   color: #999;
   font-size: 14px;

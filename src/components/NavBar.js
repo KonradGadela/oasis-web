@@ -14,15 +14,25 @@ const NavBar = () => {
     
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                  
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Services</a>
+                    <a class="nav-link active" aria-current="page">
+                      <Link to="/rooms" className="custom-link" >Rooms</Link>
+                    </a>
                   </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="#ServicesAll">Services</a>
+                  </li>
+
                   <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                   </li>
+
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                  <button type="button" class="btn"><Link to="/contact" className="custom-link" >Contact</Link></button>
                   </li>
+
                   <li class="nav-item">
                     <button type="button" class="btn btn-success"><Link to="/SignIn" className="custom-link" >Sign In</Link></button>
                   </li>
