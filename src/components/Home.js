@@ -4,13 +4,24 @@ import mainpic from '.././images/oasis-image-main.png';
 import gympic from '.././images/gym.png';
 import roompic from '.././images/room.jpg';
 import chefpic from '.././images/chef.jpg';
+import hotelpic from '.././images/hotelpic.jpg';
+
 
 import NavBar from './NavBar';
 import { Service } from './Service';
 
 const Home = () => {
+
+  const backgroundStyle = {
+    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 75)), url(${hotelpic})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: '100vh', // Set the height of the background
+  };
+
   return (
-    <div>
+    <div style={backgroundStyle}>
 
       <NavBar />
 
@@ -19,18 +30,17 @@ const Home = () => {
         <div class="main-content-left">
           <h1 class="welcome-header">Welcome to</h1>
           <h1 class="welcome-header">Oasis Hotel</h1>
-          <p>Escape the hustle and bustle of everyday life and find your oasis at our hotel. Enjoy our comfortable accommodations, exceptional amenities, and unparalleled service.</p>
-          <button type="button" class="btn btn-success">View all services</button>
+          <p class="main-paragraph rounded">Escape the hustle and bustle of everyday life and find your oasis at our hotel.<br/> Enjoy our comfortable accommodations, exceptional amenities, and unparalleled service.</p>
+          <button type="button" class="btn btn-success" ><a href="#ServicesAll" class="nav-link">View all services</a></button>
         </div>
 
 
         <div class="main-content-right">
-          <img src={mainpic} class="main-pic rounded" alt="sth" />
+          <img  src={mainpic} class="main-pic rounded service-pic" alt="sth" />
         </div>
 
       </div>
 
-      <hr />
 
       <h1 class="allServicesHeader">All services</h1>
 

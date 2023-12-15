@@ -40,6 +40,7 @@ const SignUp = () => {
             });
     };
 
+    
     return (
         <div>
             <NavBar />
@@ -121,7 +122,7 @@ const SignUp = () => {
 
                     <button
                         type="button"
-                        className="btn btn-success log-in-button"
+                        className="btn btn-success "
                         onClick={handleSignUp}
                     >
                         Sign Up
