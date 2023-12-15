@@ -6,14 +6,8 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
 
-const FilterBar = () => {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const tomorrowFormatted = tomorrow;
-
-    const [dateFrom, setDateFrom] = React.useState(tomorrowFormatted);
-    const [dateTo, setDateTo] = React.useState('');
-    const [roomSize, setRoomSize] = React.useState('');
+const FilterBar = ({ dateFrom, setDateFrom, dateTo, setDateTo, roomSize, setRoomSize, makeApiCall }) => {
+    
 
     const handleDateFromChange = (selectedDate) => {
         if (selectedDate <= dateTo) {
@@ -33,8 +27,7 @@ const FilterBar = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Send the form data to the backend
-        // Add your backend API call or logic here
+        makeApiCall();
     };
 
     return (

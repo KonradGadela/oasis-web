@@ -5,7 +5,33 @@ import NavBar from '../NavBar';
 import axios from 'axios';
 import FilterBar from './FilterBar';
 const Rooms = () => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const affterTomorrow = new Date();
+    affterTomorrow.setDate(affterTomorrow.getDate() + 2);
     const [roomData, setRoomData] = useState([]);
+    const [dateFrom, setDateFrom] = useState(tomorrow);
+    const [dateTo, setDateTo] = useState(affterTomorrow);
+    const [roomSize, setRoomSize] = useState('0');
+    
+
+    const makeApiCall = () => {
+        axios.get('https://localhost:7147/api/Room/GetRoomBySearchParameters', {
+            params: {
+                dateFrom: dateFrom,
+                dateTo: dateTo,
+                roomSize: roomSize
+            }
+        })
+        .then(response => {
+            console.log(response.data);
+            setRoomData(response.data);
+        })
+        .catch(error => {
+            console.error('There was an error!', error);
+        });
+    };
+
 
     useEffect(() => {
         axios.get("https://localhost:7147/api/Room/GetAllRooms")
@@ -38,7 +64,15 @@ const Rooms = () => {
     return (
         <div style={{ backgroundColor: '#f5f5f5', minHeight: '100vh' }}>
             <NavBar />
-            <FilterBar />
+            <FilterBar
+            dateFrom={dateFrom}
+            setDateFrom={setDateFrom}
+            dateTo={dateTo}
+            setDateTo={setDateTo}
+            roomSize={roomSize}
+            setRoomSize={setRoomSize}
+            makeApiCall={makeApiCall}
+        />
             <ThemeProvider theme={theme}>
                 <div style={{ backgroundColor: '#f5f5f5', marginRight: '30px' }}>
                     <RoomGrid rooms={roomData} />
