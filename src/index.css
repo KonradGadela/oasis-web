@@ -14,7 +14,17 @@ code {
 
 .navbar-collapse
 {
-  margin-left: 70%;
+  margin-left: 71%;
+}
+
+.navbar-brand
+{
+  margin-left: 45px;
+}
+
+.navbar
+{
+  box-shadow: 0px 4px 8px rgba(0, 0, 40, 0.1); /* Adjust the values as needed */
 }
 
 .main-content
@@ -35,19 +45,19 @@ code {
 
 .main-pic
 {
-width: 600px;
-height: 600px;
+width: 600px !important;
+height: 600px !important;
+max-height: 600px !important;
+margin-left: 400px;
 }
 
 .welcome-header 
 {
-  font-size: 90px;
+  font-size: 75px;
+  color:#fff;
+  text-shadow: 1px 1px 7px grey; /* Black text shadow */
 }
 
-.welcome-header
-{
-  font-size: 75px;
-}
 
 p
 {
@@ -101,7 +111,7 @@ a {
   width: 20%;
 }
 
-.alert-success
+.alert
 {
   width: 70% !important;
   margin: auto;
@@ -130,7 +140,7 @@ a {
   max-height: 300px; /* Set a fixed height for the images */
   object-fit: cover;
   transition: transform 0.3s, box-shadow 0.3s; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .service-pic:hover {
@@ -143,6 +153,9 @@ a {
 {
   margin-top: 30px;
   margin-left: 40px;
+  color: #fff; /* White text color */
+  text-shadow: 1px 1px 5px rgb(119, 119, 119); /* Black text shadow */
+
 }
 
 .serviceHeader
@@ -162,4 +175,12 @@ a {
 .custom-select{
   background-color: white;
   min-width: 300px;
+}
+.main-paragraph
+{
+  background-color: white;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
