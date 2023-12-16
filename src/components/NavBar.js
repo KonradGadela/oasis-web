@@ -7,7 +7,6 @@ const NavBar = () => {
             <div class="container-fluid">
               <a class="navbar-brand"><Link to="/" className="custom-link" >OASIS HOTEL</Link></a>
     
-              <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   
                   <li class="nav-item">
@@ -33,7 +32,6 @@ const NavBar = () => {
                   </li>
                 </ul>
               </div>
-            </div>
           </nav>
       );
 };
