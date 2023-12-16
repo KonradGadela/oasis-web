@@ -42,7 +42,7 @@ const Contact = () => {
             <input type="text" className="form-control message-input" id="message" placeholder="Your Message" />
           </div>
         </div>
-        <button type="button" class="btn btn-success">Send message</button>
+        <button type="button" class="btn btn-success contact-button">Send message</button>
         </div>
       </div>
 
