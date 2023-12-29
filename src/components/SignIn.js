@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import NavBar from './NavBar';
 import { Link } from 'react-router-dom';
+import {jwtDecode} from 'jwt-decode';
+import { connect } from 'react-redux';
+import { loginUser } from '../redux/actions/userActions';
+import axios from 'axios';
 
 
-
-const SignIn = () => {
+const SignIn = ({ loginUser }) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,30 +17,26 @@ const SignIn = () => {
 
 
   const handleSignIn = () => {
-    setShowExceptionAlert(false)
-    const data = { email, password };
+    setShowExceptionAlert(false);
+    const data = { Email :email, Password:password };
     const apiUrl = 'https://localhost:7147/api/user/Login';
 
-    fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    }).then(response => {
-      if (!response.ok) {
-        setShowExceptionAlert(true);
-      }
-      else
-      {
-        console.log('Success:', data);
+    axios.post(apiUrl, data)
+      .then(response => {
+        console.log(response);
+        const user = jwtDecode(response.data);
+        console.log(user);
+        loginUser(user);
+        console.log('Success:', response);
         setShowSuccessAlert(true);
-        setTimeout(() => {
-          window.location.href = './';
-        }, 3000);
-      }
-    })
-      
+        // setTimeout(() => {
+        //   window.location.href = './';
+        // }, 3000);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        setShowExceptionAlert(true);
+      });
   };
 
   return (
@@ -107,4 +106,8 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+const mapDispatchToProps = {
+  loginUser
+};
+
+export default connect(null, mapDispatchToProps)(SignIn);

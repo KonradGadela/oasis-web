@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 const NavBar = () => {
+  const user = useSelector(state => state.user);
     return (
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -27,7 +28,9 @@ const NavBar = () => {
                   <li class="nav-item">
                   <button type="button" class="btn"><Link to="/contact" className="custom-link" >Contact</Link></button>
                   </li>
-
+                  <li className="nav-item">
+                      <span className="nav-link">Welcome, {user ? user.name : 'Guest'}!</span>
+                  </li>
                   <li class="nav-item">
                     <button type="button" class="btn btn-success"><Link to="/SignIn" className="custom-link" >Sign In</Link></button>
                   </li>
