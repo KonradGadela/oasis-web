@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavBar from './NavBar';
 import { Link } from 'react-router-dom';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import { connect } from 'react-redux';
 import { loginUser } from '../redux/actions/userActions';
 import axios from 'axios';
@@ -13,7 +13,6 @@ const SignIn = ({ loginUser }) => {
   const [password, setPassword] = useState('');
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showExceptionAlert, setShowExceptionAlert] = useState(false);
-
 
 
   const handleSignIn = () => {
