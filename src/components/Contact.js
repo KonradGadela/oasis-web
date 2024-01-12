@@ -25,7 +25,7 @@ const Contact = () => {
         console.error('Error:', error);
       });
   };
-
+//Czyszczenie pól
   const handleClearingFields = () => {
       setName('');
       setEmail('');
