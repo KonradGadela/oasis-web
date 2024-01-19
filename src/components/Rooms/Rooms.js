@@ -33,6 +33,7 @@ const Rooms = () => {
         });
     };
 
+    //Reservations 
     //sth
     useEffect(() => {
         axios.get("https://localhost:7147/api/Room/GetAllRooms")
