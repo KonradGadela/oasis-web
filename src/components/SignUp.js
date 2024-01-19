@@ -9,7 +9,7 @@ const SignUp = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [showSuccessAlert, setShowSuccessAlert] = useState(false);
-
+// added grid component
     const handleSignUp = () => {
         const data = {
             firstName,
