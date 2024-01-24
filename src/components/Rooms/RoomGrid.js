@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Grid, Paper, Typography } from '@mui/material';
 import { styled } from '@mui/system';
+import { useNavigate } from 'react-router-dom';
 
 const RoomPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
@@ -67,24 +68,34 @@ const RoomFooterWrapper = ({ room }) => {
   );
 };
 
-const RoomGrid = ({ rooms }) => {
-  const [hoveredRoomId, setHoveredRoomId] = useState(null);
+  const RoomGrid = ({ rooms }) => {
+    const [hoveredRoomId, setHoveredRoomId] = useState(null);
 
   const handleRoomHover = (roomId) => {
     setHoveredRoomId(roomId);
   };
+
+  const navigate = useNavigate();
+  const redirectToRoomPage = (roomId) => {
+    navigate(`/room/${roomId}`);
+  };
+
 
   return (
     <div>
       <Grid container spacing={3}>
         {rooms.map((room) => (
           <Grid item key={room.id} xs={12} sm={6} md={4} lg={3}>
-            <RoomPaper onMouseEnter={() => handleRoomHover(room.id)} onMouseLeave={() => handleRoomHover(null)}>
-              <RoomImage picture={room.images} />
-              {hoveredRoomId === room.id && (
-                <RoomFooterWrapper room={room} />
-              )}
+
+            <RoomPaper onMouseEnter={() => handleRoomHover(room.id)} 
+                       onMouseLeave={() => handleRoomHover(null)}
+                       onClick={() => redirectToRoomPage(room.id)}>
+
+            <RoomImage picture={room.images} />
+            {hoveredRoomId === room.id && ( <RoomFooterWrapper room={room} /> )}
+
             </RoomPaper>
+
           </Grid>
         ))}
       </Grid>

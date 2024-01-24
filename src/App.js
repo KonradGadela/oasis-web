@@ -5,6 +5,7 @@ import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import Rooms from './components/Rooms/Rooms';
 import Contact from './components/Contact';
+import Room from './components/Room'
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/room/:id" element={<Room />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
 
       </Routes>
     </Router>
