@@ -198,3 +198,39 @@ a {
 {
   margin-left: 300px;
 }
+
+.admin-button-grid
+{
+  margin: 5px !important;
+}
+
+.dashboard-title {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.admin-dashboard-table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.admin-dashboard-table th,
+.admin-dashboard-table td {
+  padding: 12px;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.admin-dashboard-table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #28a745;
+  background-color: #e0f3ea;
+}
+
+.admin-dashboard-table tbody+tbody {
+  border-top: 2px solid #28a745;
+}
+
