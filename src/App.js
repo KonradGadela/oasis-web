@@ -7,6 +7,7 @@ import Rooms from './components/Rooms/Rooms';
 import Contact from './components/Contact';
 import Protected from './components/Protected';
 import Dashboard from './components/AdminDashboard/AdminDashboard';
+import Room from './components/Room'
 
 const App = () => {
   return (
@@ -18,6 +19,8 @@ const App = () => {
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<Protected><Dashboard/></Protected>} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+        <Route path="/room/:id" element={<Room />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </Router>

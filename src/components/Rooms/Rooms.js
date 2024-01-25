@@ -72,10 +72,13 @@ const Rooms = () => {
             roomSize={roomSize}
             setRoomSize={setRoomSize}
             makeApiCall={makeApiCall}
-        />
+            />
+
             <ThemeProvider theme={theme}>
                 <div style={{ backgroundColor: '#f5f5f5', marginRight: '30px' }}>
+
                     <RoomGrid rooms={roomData} />
+
                 </div>
             </ThemeProvider>
         </div>
