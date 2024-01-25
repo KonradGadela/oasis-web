@@ -25,19 +25,20 @@ const SignIn = ({ loginUser }) => {
         console.log(response);
         const user = jwtDecode(response.data);
         console.log(user);
+        user.jwt = response.data;
         loginUser(user);
         console.log('Success:', response);
         setShowSuccessAlert(true);
-        // setTimeout(() => {
-        //   window.location.href = './';
-        // }, 3000);
+          setTimeout(() => {
+            window.location.href = './';
+          }, 3000);
       })
       .catch(error => {
         console.error('Error:', error);
         setShowExceptionAlert(true);
       });
   };
-// reservations and improvements
+
   return (
     <div>
       <NavBar />
