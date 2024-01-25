@@ -14,9 +14,10 @@ const Rooms = () => {
     const [dateFrom, setDateFrom] = useState(tomorrow);
     const [dateTo, setDateTo] = useState(affterTomorrow);
     const [roomSize, setRoomSize] = useState('0');
-    
+    const [isLoading, setIsLoading] = useState(true);
 
     const makeApiCall = () => {
+        setIsLoading(true);
         axios.get('https://localhost:7147/api/Room/GetRoomBySearchParameters', {
             params: {
                 dateFrom: dateFrom,
@@ -27,20 +28,25 @@ const Rooms = () => {
         .then(response => {
             console.log(response.data);
             setRoomData(response.data);
+            setIsLoading(false);
         })
         .catch(error => {
             console.error('There was an error!', error);
+            setIsLoading(false);
         });
     };
 
     useEffect(() => {
+        setIsLoading(true);
         axios.get("https://localhost:7147/api/Room/GetAllRooms")
             .then((response) => {
                 console.log(response.data);
                 setRoomData(response.data);
+                setIsLoading(false);
             })
             .catch((error) => {
                 console.error("Error fetching room data:", error);
+                setIsLoading(false);
             });
     }, []);
 
@@ -76,9 +82,16 @@ const Rooms = () => {
 
             <ThemeProvider theme={theme}>
                 <div style={{ backgroundColor: '#f5f5f5', marginRight: '30px' }}>
-
-                    <RoomGrid rooms={roomData} />
-
+                    {isLoading ? (
+                        <div className="text-center">
+                        <div className="spinner-border" role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <p>Loading...</p>
+                      </div>
+                    ) : (
+                        <RoomGrid rooms={roomData} />
+                    )}
                 </div>
             </ThemeProvider>
         </div>
