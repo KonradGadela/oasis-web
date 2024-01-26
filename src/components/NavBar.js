@@ -30,6 +30,14 @@ const NavBar = () => {
           </li>
 
           <li class="nav-item">
+            <a class="nav-link active" aria-current="page">
+              <Link to="/contact" className="custom-link">
+                Contact
+              </Link>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#ServicesAll">
               Services
             </a>
