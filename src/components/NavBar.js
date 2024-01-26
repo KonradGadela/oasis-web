@@ -10,7 +10,7 @@ const NavBar = () => {
   const handleLogout = () => {
     dispatch(logoutUser());
   };
-
+//Added admin dashboard user messages
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
