@@ -35,11 +35,6 @@ const NavBar = () => {
             </a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              About
-            </a>
-          </li>
           <li className="nav-item">
             <span className="nav-link">
               Welcome, {user ? user.name : 'Guest'}!

@@ -234,3 +234,17 @@ a {
   border-top: 2px solid #28a745;
 }
 
+.first-row-room {
+  display: flex;
+  padding: 70px;
+}
+  
+.left-first-room
+{
+  margin-right: 70px;
+}
+
+.row
+{
+  margin: auto !important;
+}

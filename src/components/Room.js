@@ -23,6 +23,8 @@ const Room = () => {
     const user = useSelector(state => state.user);
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
+    const [showReservationCompleted, setShowReservationCompleted] = useState(false);
+
 
     const handleStartDateChange = (date) => {
         setStartDate(date);
@@ -48,7 +50,10 @@ const Room = () => {
           }
         })
           .then((response) => {
-            window.location.href = '/';
+            setShowReservationCompleted(true);
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 3000);
           })
           .catch((error) => {
             console.error("Error fetching room data:", error);
@@ -77,9 +82,16 @@ const Room = () => {
     return (
         <div>
             <NavBar />
-            <h2>{roomData.name}</h2>
-            <h2>{roomData.description}</h2>
-            <RoomImage picture={roomData.images} />
+            <div className="first-row-room">
+                <div className="left-first-room">
+                    <h2>{roomData.name}</h2>
+                    <p>{roomData.description}</p>
+                </div>
+
+                <div className="right-first-room">
+                    <RoomImage picture={roomData.images} />
+                </div>
+            </div>
 
             <div className='row'>
                 <Form className="d-flex" onSubmit={handleSubmit}>
@@ -94,6 +106,7 @@ const Room = () => {
                                 minDate={new Date()}
                                 dateFormat="yyyy-MM-dd"
                                 className="form-control"
+                                autoComplete = 'off'
                             />
                     </FormGroup>
                         </Col>
@@ -110,6 +123,7 @@ const Room = () => {
                                 startDate={startDate}
                                 endDate={endDate}
                                 minDate={startDate}
+                                autoComplete = 'off'
                             />
                             </FormGroup>
                         </Col>
@@ -119,6 +133,13 @@ const Room = () => {
                     </Row>
                 </Form>
             </div>
+
+            {showReservationCompleted && (
+                <div className="alert alert-success" role="alert">
+                    You have created the reservation successfully. You will be redirected to the home page in 3 seconds...
+                </div>
+            )}
+
         </div>
     );
 
